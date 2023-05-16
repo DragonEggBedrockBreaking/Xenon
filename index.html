@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xenon</title>
+    <script type="module" src="/src/start.ts" defer></script>
+    <script type="module" src="/src/data.ts" defer></script>
+  </head>
+
+  <body>
+    <div id="start" class="container">
+      <h1>Xenon Password Manager</h1>
+
+      <div class="start-inputs">
+        <label for="password-input"></label><input id="password-input" placeholder="Enter your password..." />
+        <label for="totp-input"></label><input id="totp-input" placeholder="Enter your totp code (if login)..." />
+        <button id="login-button" type="button">Login</button>
+        <button id="register-button" type="button">Register</button>
+        <button id="done-button" type="button" style="display:none">Done</button>
+      </div>
+
+      <p id="start-msg"></p>
+
+      <div class="qrcode-container">
+        <img id="qrcode" class="qrcode" src="" alt=""/>
+      </div>
+    </div>
+
+    <div id="data" class="container" style="display:none">
+      <h1>Xenon Password Manager</h1>
+
+      <div class="search">
+        <label for="search-input"></label><input id="search-input" placeholder="Search..." />
+        <button id="search-website" type="button">Search Website</button>
+        <button id="search-username" type="button">Search Username</button>
+        <button id="reset-search" type="button">Reset</button>
+      </div>
+
+      <br>
+
+      <div class="main-table">
+        <table class="the-main-table" id="main-table">
+          <thead>
+            <tr>
+              <th>Website</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Notes</th>
+              <th>Actions</th>
+              <th>Strength</th>
+              <th>Suggestions</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+
+      <div class="add">
+        <label for="add-website"></label><input id="add-website" placeholder="Website" />
+        <label for="add-username"></label><input id="add-username" placeholder="Username" />
+        <label for="add-password"></label><input id="add-password" placeholder="Password" />
+        <label for="add-notes"></label><input id="add-notes" placeholder="Notes" />
+        <button id="add-button" type="button">Add</button>
+        <button id="generate-password-add" type="button">Generate Password</button>
+      </div>
+
+      <div class="edit" style="display:none">
+        <label for="edit-website"></label><input id="edit-website" placeholder="Website" />
+        <label for="edit-username"></label><input id="edit-username" placeholder="Username" />
+        <label for="edit-password"></label><input id="edit-password" placeholder="Password" />
+        <label for="edit-notes"></label><input id="edit-notes" placeholder="Notes" />
+        <button id="edit-button" type="button">Edit</button>
+        <button id="cancel-button" type="button">Cancel</button>
+        <button id="generate-password-edit" type="button">Generate Password</button>
+      </div>
+
+      <br>
+
+      <div class="slider-container">
+        <label for="password-length"></label><input type="range" min="8" max="64" value="16" class="slider" id="password-length" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">16</p>
+        <br>
+        <label class="checkbox-container">
+          Include Lowercase Letters
+          <input type="checkbox" id="include-lowercase" checked>
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="checkbox-container">
+          Include Uppercase Letters
+          <input type="checkbox" id="include-uppercase" checked>
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="checkbox-container">
+          Include Numbers
+          <input type="checkbox" id="include-numbers" checked>
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="checkbox-container">
+          Include Symbols
+          <input type="checkbox" id="include-symbols" checked>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <br>
+
+      <div class="change">
+        <label for="new-master-password"></label><input id="new-master-password" placeholder="New Master Password" />
+        <button id="change-button" type="button">Change Master Password</button>
+      </div>
+    </div>
+  </body>
+</html>
