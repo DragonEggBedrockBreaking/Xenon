@@ -2,7 +2,7 @@
 name = "xenon"
 version = "0.0.0"
 description = "Xenon is a simple, fast, and secure password manager."
-authors = ["you"]
+authors = ["DragonEggBedrockBreaking"]
 license = ""
 repository = ""
 edition = "2021"
@@ -13,7 +13,7 @@ tauri-build = { version = "1.2", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2", features = ["shell-open"] }
+tauri = { version = "2.0.0-alpha", features = [] }
 sqlite = "0.30.4"
 argon2 = "0.5.0"
 rand_core = { version = "0.6.4", features = ["std"] }
@@ -32,3 +32,6 @@ default = ["custom-protocol"]
 # this feature is used used for production builds where `devPath` points to the filesystem
 # DO NOT remove this
 custom-protocol = ["tauri/custom-protocol"]
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]

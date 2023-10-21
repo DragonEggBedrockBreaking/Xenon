@@ -1,4 +1,4 @@
-import { invoke } from "@tauri-apps/api/tauri";
+import { invoke } from "@tauri-apps/api/primitives";
 
 let passwordInputEl: HTMLInputElement | null;
 let totpInputEl: HTMLInputElement | null;

@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": true
@@ -10,14 +10,15 @@
     "productName": "xenon",
     "version": "0.0.0"
   },
-  "tauri": {
-    "allowlist": {
-      "all": false,
-      "shell": {
-        "all": false,
-        "open": true
-      }
+  "plugins": {
+    "shell": {
+      "open": true
     },
+    "updater": {
+      "endpoints": []
+    }
+  },
+  "tauri": {
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -45,6 +46,9 @@
       "resources": [],
       "shortDescription": "",
       "targets": "all",
+      "updater": {
+        "active": false
+      },
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
@@ -53,9 +57,6 @@
     },
     "security": {
       "csp": null
-    },
-    "updater": {
-      "active": false
     },
     "windows": [
       {
